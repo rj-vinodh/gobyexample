@@ -7,6 +7,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 func check(e error) {
@@ -17,9 +18,10 @@ func check(e error) {
 
 func main() {
 
+	s := strconv.Itoa(101)
 	// To start, here's how to dump a string (or just
 	// bytes) into a file.
-	d1 := []byte("hello\ngo\n")
+	d1 := []byte("hello\ngo\n" + s + "\n")
 	err := os.WriteFile("/tmp/dat1", d1, 0644)
 	check(err)
 
